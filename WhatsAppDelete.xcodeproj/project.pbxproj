@@ -12,6 +12,7 @@
 		D0D7D99721C59F3F0086BD46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D7D99521C59F3F0086BD46 /* Main.storyboard */; };
 		D0D7D99921C59F410086BD46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D7D99821C59F410086BD46 /* Assets.xcassets */; };
 		D0D7D99C21C59F410086BD46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D7D99A21C59F410086BD46 /* LaunchScreen.storyboard */; };
+		D0D7D9A621C5A0A50086BD46 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D7D9A521C5A0A50086BD46 /* ChatCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D0D7D99821C59F410086BD46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0D7D99B21C59F410086BD46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0D7D99D21C59F410086BD46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0D7D9A521C5A0A50086BD46 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,30 @@
 			isa = PBXGroup;
 			children = (
 				D0D7D99121C59F3F0086BD46 /* AppDelegate.swift */,
-				D0D7D99321C59F3F0086BD46 /* ViewController.swift */,
-				D0D7D99521C59F3F0086BD46 /* Main.storyboard */,
-				D0D7D99821C59F410086BD46 /* Assets.xcassets */,
-				D0D7D99A21C59F410086BD46 /* LaunchScreen.storyboard */,
+				D0D7D9A321C5A07D0086BD46 /* Classes */,
+				D0D7D9A421C5A0890086BD46 /* UI Files */,
 				D0D7D99D21C59F410086BD46 /* Info.plist */,
 			);
 			path = WhatsAppDelete;
+			sourceTree = "<group>";
+		};
+		D0D7D9A321C5A07D0086BD46 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D0D7D99321C59F3F0086BD46 /* ViewController.swift */,
+				D0D7D9A521C5A0A50086BD46 /* ChatCell.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D0D7D9A421C5A0890086BD46 /* UI Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0D7D99521C59F3F0086BD46 /* Main.storyboard */,
+				D0D7D99A21C59F410086BD46 /* LaunchScreen.storyboard */,
+				D0D7D99821C59F410086BD46 /* Assets.xcassets */,
+			);
+			path = "UI Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +156,7 @@
 			files = (
 				D0D7D99421C59F3F0086BD46 /* ViewController.swift in Sources */,
 				D0D7D99221C59F3F0086BD46 /* AppDelegate.swift in Sources */,
+				D0D7D9A621C5A0A50086BD46 /* ChatCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
