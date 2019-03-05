@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint! // 22
     
     var isEdit = false
     var selectedIndex = [IndexPath]()
@@ -25,8 +26,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func editButtonTapped(_ sender: UIButton) {
-        isEdit = !isEdit
-        tableView.setEditing(isEdit, animated: true)
+        self.widthConstraint.constant = self.isEdit ? 0 : 22
+        self.isEdit = !self.isEdit
+        self.tableView.setEditing(self.isEdit, animated: true)
     }
     
 }
