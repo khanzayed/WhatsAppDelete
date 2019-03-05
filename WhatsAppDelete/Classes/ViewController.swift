@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIButton!
@@ -17,14 +17,42 @@ class ViewController: UIViewController {
     var isEdit = false
     var selectedIndex = [IndexPath]()
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.allowsMultipleSelection = isEdit
         tableView.allowsMultipleSelectionDuringEditing = !isEdit
         tableView.reloadData()
+        
+        self.view.layoutIfNeeded()
+        
+        bottomView.layer.cornerRadius = 20.0
+        
+        let shadowLayer = CAShapeLayer()
+        
+        shadowLayer.path = UIBezierPath(roundedRect: bottomView.bounds, cornerRadius: 10.0).cgPath
+        shadowLayer.fillColor = UIColor.white.cgColor
+        
+        shadowLayer.shadowColor = UIColor.black.cgColor
+        shadowLayer.shadowPath = shadowLayer.path
+        shadowLayer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        shadowLayer.shadowOpacity = 0.3
+        shadowLayer.shadowRadius = 10
+        
+        bottomView.layer.insertSublayer(shadowLayer, at: 0)
     }
 
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let value = scrollViewHeightConstraint.constant + scrollView.contentOffset.y
+        let changeValue = min(max(112, value), 315.0)
+        scrollViewHeightConstraint.constant = changeValue
+    }
+    
     @IBAction func editButtonTapped(_ sender: UIButton) {
         self.widthConstraint.constant = self.isEdit ? 0 : 22
         self.isEdit = !self.isEdit
