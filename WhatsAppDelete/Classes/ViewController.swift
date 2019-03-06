@@ -31,6 +31,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         self.view.layoutIfNeeded()
         
+        scrollView.layer.masksToBounds = false
+        
         bottomView.layer.cornerRadius = 20.0
         
         let shadowLayer = CAShapeLayer()
